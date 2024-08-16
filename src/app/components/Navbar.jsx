@@ -13,7 +13,7 @@ function NavBar(){
                         <Link href="/mytasks">My Tasks</Link>
                     </li>
                     <li className="p-2 hover:bg-slate-300">
-                        <Link href="">Add Tasks</Link>
+                        <Link href="/mytasks/create">Add Tasks</Link>
                     </li>
                 </ul>
             </nav>
