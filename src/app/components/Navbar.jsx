@@ -5,7 +5,7 @@ function NavBar(){
         <>
         <div className=" flex justify-between items-center p-4 border-b-2 border-black">
             <div>
-                <h2><Link href="/">MyTasks</Link></h2>
+                <h2 className="text-2xl"><Link href="/">MyTasks</Link></h2>
             </div>
             <nav>
                 <ul className="flex gap-6">
