@@ -1,36 +1,36 @@
-function TaskList(){
+
+async function getTasks(){
+    const data = await fetch("http://localhost:4000/tasks", {
+        next: {
+            revalidate: 0
+        }
+    })
+
+    const res = await data.json()
+
+    return res
+}
+
+async function TaskList(){
+
+    const tasks = await getTasks()
+    
+    
     return(
         <>
         <div className="flex justify-center">
-            <ul className="flex flex-col gap-2 max-w-screen-sm">
-                <li className="bg-orange-300 rounded-md p-4">
+            <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
+                
+
+                {tasks.map((task) => (
+                <li key={task.id} className="bg-orange-300 rounded-md p-4">
                     <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">Task Name</h2>
-                        <button className=" bg-cyan-300 rounded-full p-2">Complete</button>
+                        <h2 className="text-2xl">{task.taskname}</h2>
+                        <button className=" bg-cyan-300 rounded-full p-2">{task.isComplete ? 'Complete' : 'Incomplete'}</button>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>{task.taskdescription.slice(0, 200)}...</p>
                 </li>
-                <li className="bg-orange-300 rounded-md p-4">
-                    <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">Task Name</h2>
-                        <button className=" bg-cyan-300 rounded-full p-2">Complete</button>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </li>
-                <li className="bg-orange-300 rounded-md p-4">
-                    <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">Task Name</h2>
-                        <button className=" bg-cyan-300 rounded-full p-2">Complete</button>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </li>
-                <li className="bg-orange-300 rounded-md p-4">
-                    <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">Task Name</h2>
-                        <button className=" bg-cyan-300 rounded-full p-2">Complete</button>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </li>
+                ))}
             </ul>
         </div>
         

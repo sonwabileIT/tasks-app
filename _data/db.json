@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "id": "1",
+            "taskname": "Do laundry",
+            "taskdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isComplete": true
+        },
+        {
+            "id": "2",
+            "taskname": "Clean Room",
+            "taskdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isComplete": false
+        },
+        {
+            "id": "3",
+            "taskname": "Buy groceries",
+            "taskdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isComplete": true
+        },
+        {
+            "id": "4",
+            "taskname": "Fix laptop",
+            "taskdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isComplete": false
+        }
+
+    ]
+}
