@@ -28,7 +28,7 @@ async function TaskList(){
                         <h2 className="text-2xl">{task.taskname}</h2>
                         <button className=" bg-cyan-300 rounded-full p-2">{task.isComplete ? 'Complete' : 'Incomplete'}</button>
                     </div>
-                    <p>{task.taskdescription.slice(0, 200)}...</p>
+                    <p>{task.taskdescription}</p>
                 </li>
                 ))}
             </ul>
