@@ -10,9 +10,10 @@
     "server": "json-server --watch --port 4000 ./_data/db.json"
   },
   "dependencies": {
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "postcss": "^8",
