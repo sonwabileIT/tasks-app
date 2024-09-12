@@ -1,6 +1,7 @@
 
 import { CompleteButton } from "../components/CompleteButton"
 import DeleteTaskButton from "../components/DeleteTaskButton"
+import Task from "../components/Task"
 
 
 async function getAllTasks(){
@@ -39,16 +40,7 @@ async function TaskList(){
         <div className="flex justify-center">
             <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
                 {tasks.map((task) => (
-                <li key={task.id} className="bg-orange-300 rounded-md p-4">
-                    <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">{task.taskname}</h2>
-                        <div className="flex gap-2">
-                            <CompleteButton id={task.id} children={task.isComplete ? 'Complete' : 'Incomplete'} ></CompleteButton>
-                            <DeleteTaskButton id={task.id}></DeleteTaskButton>
-                        </div>
-                    </div>
-                    <p>{task.taskdescription}</p>
-                </li>
+                <Task id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
                 ))}
             </ul>
         </div>
