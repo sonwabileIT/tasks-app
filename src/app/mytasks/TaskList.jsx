@@ -40,7 +40,7 @@ async function TaskList(){
         <div className="flex justify-center">
             <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
                 {tasks.map((task) => (
-                <Task id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
+                <Task key={task.id} id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
                 ))}
             </ul>
         </div>
