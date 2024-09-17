@@ -1,7 +1,9 @@
 "use client"
-
+import { useRouter } from "next/navigation";
 
 export function CompleteButton({id, children}){
+
+    const router = useRouter()
 
     const markComplete = async () => {
         try{
@@ -13,6 +15,7 @@ export function CompleteButton({id, children}){
                 headers: {'Content-type':'Application/json'}
             });
             const result = await task.json()
+            router.refresh();
             return console.log("From markComplete function. ", id, result);
 
             

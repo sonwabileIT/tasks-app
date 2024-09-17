@@ -1,6 +1,9 @@
 "use client"
+
+import { useRouter } from "next/navigation"
 function DeleteTaskButton({id}){
 
+    const router = useRouter();
     async function deleteTask(){
 
         try{
@@ -10,7 +13,9 @@ function DeleteTaskButton({id}){
             })
 
             const response = await data.json()
+            router.refresh()
             return console.log(response)
+            
         }
         catch(error){
             console.log(error)
