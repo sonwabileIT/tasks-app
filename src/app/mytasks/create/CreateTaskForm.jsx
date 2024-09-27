@@ -18,20 +18,24 @@ function CreateTaskForm(){
             taskname, taskdescription, isComplete: false
         }
 
-        if(taskname !== '' && taskdescription !== ''){
-            const result = await fetch('http://localhost:4000/tasks', {
-                method: "POST",
-                body: JSON.stringify(task),
-                headers: {"Content-Type": "application/json"}
-            })
-    
-            if(result.status === 201){
-                router.refresh()
-                // router.push('/mytasks')
-            }
-        }
-        
+        try{
 
+            if(taskname !== '' && taskdescription !== ''){
+                const result = await fetch('http://localhost:5000/api/tasks', {
+                    method: "POST",
+                    body: JSON.stringify(task),
+                    headers: {"Content-Type": "application/json"}
+                })
+        
+                if(result.status === 201){
+                    router.refresh()
+                    // router.push('/mytasks')
+                }
+            }
+
+        }catch(err){
+            console.log(err)
+        }
         
     }
     
