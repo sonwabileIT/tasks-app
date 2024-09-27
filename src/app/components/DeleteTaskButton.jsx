@@ -12,9 +12,9 @@ function DeleteTaskButton({id}){
                 headers: {'Content-type':'application/json'}
             })
 
-            const response = await data.json()
+            // const response = await data.json()
             router.refresh()
-            return console.log(response)
+            // return console.log(response)
             
         }
         catch(error){
