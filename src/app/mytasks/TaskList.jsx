@@ -5,7 +5,7 @@ import Task from "../components/Task"
 
 
 async function getAllTasks(){
-    const data = await fetch("http://localhost:5000/api/tasks", {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         next: {
             revalidate: 0
         }

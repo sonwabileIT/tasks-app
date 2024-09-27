@@ -7,7 +7,7 @@ function DeleteTaskButton({id}){
     async function deleteTask(){
 
         try{
-            const data = await fetch(`http://localhost:5000/api/tasks/${id}`,{
+            const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`,{
                 method: "DELETE",
                 headers: {'Content-type':'application/json'}
             })

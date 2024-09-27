@@ -21,7 +21,7 @@ function CreateTaskForm(){
         try{
 
             if(taskname !== '' && taskdescription !== ''){
-                const result = await fetch('http://localhost:5000/api/tasks', {
+                const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
                     method: "POST",
                     body: JSON.stringify(task),
                     headers: {"Content-Type": "application/json"}
