@@ -5,14 +5,14 @@ import Task from "../components/Task"
 
 
 async function getAllTasks(){
-    const data = await fetch("http://localhost:4000/tasks", {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         next: {
             revalidate: 0
         }
     })
 
     const res = await data.json()
-
+    // console.log("From getAllTasks: " + res)
     return res
 }
 

@@ -7,16 +7,16 @@ export function CompleteButton({id, children}){
 
     const markComplete = async () => {
         try{
-            const task = await fetch(`http://localhost:4000/tasks/${id}`, {
+            const task = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     isComplete: true,
                 }),
                 headers: {'Content-type':'Application/json'}
             });
-            const result = await task.json()
+            // const result = await task.json()
             router.refresh();
-            return console.log("From markComplete function. ", id, result);
+            // return console.log("From markComplete function. ", id, result);
 
             
 

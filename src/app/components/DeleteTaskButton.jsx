@@ -7,14 +7,14 @@ function DeleteTaskButton({id}){
     async function deleteTask(){
 
         try{
-            const data = await fetch(`http://localhost:4000/tasks/${id}`,{
+            const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`,{
                 method: "DELETE",
                 headers: {'Content-type':'application/json'}
             })
 
-            const response = await data.json()
+            // const response = await data.json()
             router.refresh()
-            return console.log(response)
+            // return console.log(response)
             
         }
         catch(error){
