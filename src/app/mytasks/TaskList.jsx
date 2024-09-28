@@ -1,35 +1,46 @@
 
-async function getTasks(){
-    const data = await fetch("http://localhost:4000/tasks", {
+import { CompleteButton } from "../components/CompleteButton"
+import DeleteTaskButton from "../components/DeleteTaskButton"
+import Task from "../components/Task"
+
+
+async function getAllTasks(){
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         next: {
             revalidate: 0
         }
     })
 
     const res = await data.json()
-
+    // console.log("From getAllTasks: " + res)
     return res
 }
 
+// async function getTaskById(id){
+//     const data = await fetch("http://localhost:4000/tasks/" + id)
+//     const result = await data.json()
+//     return result
+// }
+
+// const markComplete = async (id) => {
+//     const task = await fetch(`http://localhost:4000/tasks/${id}`);
+//     const result = await task.json()
+//     return console.log("From markComplete function. ", id, result);
+// }
+
+
 async function TaskList(){
 
-    const tasks = await getTasks()
+    const tasks = await getAllTasks()
+    
     
     
     return(
         <>
         <div className="flex justify-center">
             <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
-                
-
                 {tasks.map((task) => (
-                <li key={task.id} className="bg-orange-300 rounded-md p-4">
-                    <div className="flex justify-between items-center  mb-4">
-                        <h2 className="text-2xl">{task.taskname}</h2>
-                        <button className=" bg-cyan-300 rounded-full p-2">{task.isComplete ? 'Complete' : 'Incomplete'}</button>
-                    </div>
-                    <p>{task.taskdescription}</p>
-                </li>
+                <Task key={task.id} id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
                 ))}
             </ul>
         </div>
