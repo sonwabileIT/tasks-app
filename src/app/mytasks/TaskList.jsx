@@ -1,6 +1,7 @@
 
 import { CompleteButton } from "../components/CompleteButton"
 import DeleteTaskButton from "../components/DeleteTaskButton"
+import DeleteAllTasksButton from "../components/DeleteAllTasksButton"
 import Task from "../components/Task"
 
 
@@ -48,9 +49,7 @@ async function TaskList(){
         </div>
 
         <div className="flex justify-center mt-4">
-            <button className="p-2 rounded-md bg-red-500">
-                Delete all Tasks
-            </button>
+            <DeleteAllTasksButton></DeleteAllTasksButton>
         </div>
         
         
