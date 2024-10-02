@@ -6,7 +6,7 @@ import TaskList from "./mytasks/TaskList";
 export default function Home() {
   return (
     <>
-    <div className="md:flex pb-4 gap-2 bg-gray-100 ">
+    <div className="md:flex pb-4 gap-2 bg-gray-200 ">
       <div className=" w-full">
         <CreateTask/>
       </div>
