@@ -42,7 +42,11 @@ async function TaskList(){
         
         <div className="flex justify-center">
                 <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
-                    {tasks.map((task) => (
+                    {tasks.length === 0 ? <div className="bg-orange-100 rounded-md p-4 border border-orange-500  text-orange-600 ">
+                                            The tasklists is empty
+                                            </div> :
+                    
+                    tasks.map((task) => (
                     <Task key={task.id} id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
                     ))}
                 </ul>
