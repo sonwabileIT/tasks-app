@@ -37,13 +37,22 @@ async function TaskList(){
     
     return(
         <>
+        
+        
         <div className="flex justify-center">
-            <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
-                {tasks.map((task) => (
-                <Task key={task.id} id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
-                ))}
-            </ul>
+                <ul className="flex flex-col gap-2 max-w-screen-sm px-4 md:px-0">
+                    {tasks.map((task) => (
+                    <Task key={task.id} id={task.id} taskname={task.taskname} taskdescription={task.taskdescription} isComplete={task.isComplete} />
+                    ))}
+                </ul>
         </div>
+
+        <div className="flex justify-center mt-4">
+            <button className="p-2 rounded-md bg-red-500">
+                Delete all Tasks
+            </button>
+        </div>
+        
         
         </>
     )
