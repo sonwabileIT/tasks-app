@@ -27,7 +27,7 @@ export function CompleteButton({id, children}){
     }
 
     return(
-        <button onClick={markComplete} className="bg-cyan-300 rounded-md p-2">
+        <button onClick={markComplete} >
             {children}
         </button>
     )
