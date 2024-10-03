@@ -6,7 +6,6 @@ function MyTasks(){
         <div>
             <h2 className="text-4xl my-7 text-center">My Tasks</h2>
             <TaskList />
-            {/*Tasks Lists*/}
         </div>
         </>
     )

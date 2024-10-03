@@ -29,7 +29,6 @@ function CreateTaskForm(){
         
                 if(result.status === 201){
                     router.refresh()
-                    // router.push('/mytasks')
                 }
             }
 
@@ -47,12 +46,10 @@ function CreateTaskForm(){
                 <div className="flex flex-col mb-6">
                     <label className="my-2">Task Name</label>
                     <input type="text" placeholder="Write task name..." onChange={(e) => setTaskName(e.target.value)} value={taskname} className="p-2 rounded-md border-2 border-slate-700"/>
-                    {/* <p>{taskname}</p> */}
                 </div>
                 <div className="flex flex-col mb-6">
                     <label className="my-2">Task Description</label>
                     <textarea rows="4" placeholder="Write don your tasks..."   onChange={(e) => setTaskDescription(e.target.value)} value={taskdescription} className="p-2 rounded-md border-2 border-slate-700" />
-                    {/* <p>{taskdescription}</p> */}
                 </div>
                 <div className="flex justify-center">
                     <button type="submit" className="bg-orange-400 rounded-sm p-3 text-white hover:bg-orange-500">Add Task</button>
