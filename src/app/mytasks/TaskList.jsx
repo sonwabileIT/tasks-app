@@ -3,14 +3,21 @@ import Task from "../components/Task"
 
 
 async function getAllTasks(){
-    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
-        next: {
-            revalidate: 0
-        }
-    })
-
-    const res = await data.json()
-    return res
+    try{
+        const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
+            next: {
+                revalidate: 0
+            }
+        })
+    
+        const res = await data.json()
+        return res
+    }
+    catch(err){
+        console.log('Error message: ', err);
+        return []
+    }
+    
 }
 
 
