@@ -14,11 +14,7 @@ export function CompleteButton({id, children}){
                 }),
                 headers: {'Content-type':'Application/json'}
             });
-            // const result = await task.json()
             router.refresh();
-            // return console.log("From markComplete function. ", id, result);
-
-            
 
         }catch (error){
             console.log(error)
