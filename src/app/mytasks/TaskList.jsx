@@ -7,7 +7,9 @@ async function getAllTasks(){
         const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
             next: {
                 revalidate: 0
-            }
+            },
+            headers:{'Content-Type':'application/json'},
+            method: 'GET'
         })
     
         const res = await data.json()
