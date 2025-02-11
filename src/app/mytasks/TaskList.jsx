@@ -2,9 +2,12 @@ import DeleteAllTasksButton from "../components/DeleteAllTasksButton"
 import Task from "../components/Task"
 
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const endpoint = new URL("api/tasks", baseURL);
+
 async function getAllTasks(){
     try{
-        const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
+        const data = await fetch(endpoint, {
             next: {
                 revalidate: 0
             },

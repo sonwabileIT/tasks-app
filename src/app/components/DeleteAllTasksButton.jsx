@@ -1,6 +1,9 @@
 'use client'
 import { useRouter } from "next/navigation";
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const endpoint = new URL("api/tasks", baseURL);
+
 function DeleteAllTasksButton(){
 
     //connect to database and get
@@ -8,7 +11,7 @@ function DeleteAllTasksButton(){
 
     async function deleteAllTasks(){
         try{
-            const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
+            const result = await fetch(endpoint, {
                 method:'DELETE',
                 headers: {'Content-type':'application/json'}
             })

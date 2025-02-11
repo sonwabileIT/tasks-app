@@ -3,6 +3,9 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation";
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const endpoint = new URL("api/tasks", baseURL);
+
 function CreateTaskForm(){
 
     const [taskname, setTaskName] = useState('');
@@ -21,7 +24,7 @@ function CreateTaskForm(){
         try{
 
             if(taskname !== '' && taskdescription !== ''){
-                const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
+                const result = await fetch(endpoint, {
                     method: "POST",
                     body: JSON.stringify(task),
                     headers: {"Content-Type": "application/json"}

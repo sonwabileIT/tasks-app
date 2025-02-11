@@ -1,13 +1,17 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const endpoint = new URL("api/tasks/", baseURL);
+
 function DeleteTaskButton({id}){
 
     const router = useRouter();
     async function deleteTask(){
 
         try{
-            const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`,{
+            const data = await fetch(`${endpoint}${id}`,{
                 method: "DELETE",
                 headers: {'Content-type':'application/json'}
             })

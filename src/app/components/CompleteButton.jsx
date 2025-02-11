@@ -1,13 +1,16 @@
 "use client"
 import { useRouter } from "next/navigation";
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const endpoint = new URL("api/tasks/", baseURL);
+
 export function CompleteButton({id, children}){
 
     const router = useRouter()
 
     const markComplete = async () => {
         try{
-            const task = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`, {
+            const task = await fetch(`${endpoint}${id}`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     isComplete: true,
