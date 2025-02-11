@@ -3,7 +3,7 @@ import Task from "../components/Task"
 
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
-const endpoint = new URL("/api/tasks", baseURL);
+const endpoint = new URL("api/tasks", baseURL);
 
 async function getAllTasks(){
     try{
